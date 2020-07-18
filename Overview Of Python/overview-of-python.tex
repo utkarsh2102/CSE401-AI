@@ -137,7 +137,9 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{CSE401-Artificial-Intelligence}
+    \title{CSE401: Artificial Intelligence}
+    \author{Utkarsh Gupta \\ {\small A2305217557 ##} \\ {\small 7CSE 8Y ##}}
+    \date{July 18th, 2020}
     
     
     
@@ -362,18 +364,21 @@
 
     
     \hypertarget{overview-of-python}{%
-\subsubsection{Overview of Python}\label{overview-of-python}}
+\section{Overview of Python}\label{overview-of-python}}
 
 This contains the solution of \texttt{List} and \texttt{Tuple} questions
 as the lab assignment.
 
     \hypertarget{list-questions}{%
-\paragraph{List Questions:}\label{list-questions}}
+\subsection{List}\label{list-questions}}
 
-    Q1. Write a Python program to sum all the items in a list.
+\texttt{List} are mutable ordered and indexed collections of objects. The items of a list are arbitrary Python objects. Lists are formed by placing a comma-separated list of expressions in square brackets.
+
+    ~\\
+    \textbf{Q1. Write a Python program to sum all the items in a list.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{7}{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{numbers} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input the numbers: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
@@ -399,10 +404,14 @@ Alternatively, we use the 'sum' function in Python:
 sum(numbers): 30
     \end{Verbatim}
 
-    Q2. Write a Python program to get the largest number from a list.
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
+
+    ~\\
+    \textbf{Q2. Write a Python program to get the largest number from a list.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{9}{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{numbers} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input the numbers: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
@@ -425,10 +434,13 @@ Alternatively, we can use the 'max' function in Python:
 max(numbers): 10
     \end{Verbatim}
 
-    Q3. Write a Python program to get the smallest number from a list.
+    \noindent\rule{16.5cm}{0.4pt}
+
+    ~\\
+    \textbf{Q3. Write a Python program to get the smallest number from a list.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{11}{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{numbers} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input the numbers: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
@@ -451,10 +463,14 @@ Alternatively, we can use the 'min' function in Python:
 min(numbers): 2
     \end{Verbatim}
 
-    Q4. Write a Python program to multiply all the items in a list.
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
+
+    ~\\
+    \textbf{Q4. Write a Python program to multiply all the items in a list.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{13}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{numbers} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input the numbers: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
@@ -479,6 +495,8 @@ The product of all items: 3840
 Alternatively, we can use the 'prod' function from the 'math' library:
 math.prod(numbers): 3840
     \end{Verbatim}
+
+    \noindent\rule{16.5cm}{0.4pt}
 
 
     % Add a bibliography block to the postdoc
