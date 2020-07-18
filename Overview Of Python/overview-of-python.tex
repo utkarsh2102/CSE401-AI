@@ -498,6 +498,105 @@ math.prod(numbers): 3840
 
     \noindent\rule{16.5cm}{0.4pt}
 
+    \hypertarget{tuple}{%
+\paragraph{Tuple}\label{tuple}}
+
+    Q1. Write a Python program to create a tuple.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someTuple} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{someTuple}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{someTuple}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<class 'tuple'>
+(21, 12)
+    \end{Verbatim}
+
+    Q2. Write a Python program to create a tuple with different data types.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someTuple} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{debian}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{someTuple}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(21, 'debian', 12)
+    \end{Verbatim}
+
+    Q3. Write a Python program to create a tuple with numbers and print one
+item.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someTuple} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the items: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{itemNumber} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the item number you want to print: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Item number }\PY{l+s+si}{\PYZob{}itemNumber\PYZcb{}}\PY{l+s+s2}{ is }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}someTuple[itemNumber\PYZhy{}1]\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Enter the items: 6 8 2 10 4
+Enter the item number you want to print: 3
+Item number 3 is '2'.
+    \end{Verbatim}
+
+    Q4. Write a Python program to add an item in a tuple.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someTuple} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the items: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{addItem} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the item to add: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} way 1:}
+\PY{n}{newTuple} \PY{o}{=} \PY{n}{someTuple} \PY{o}{+} \PY{p}{(}\PY{n}{addItem}\PY{p}{,}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The new tuple is: }\PY{l+s+si}{\PYZob{}newTuple\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} way 2:}
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Alternatively, we can convert the tuple into list and add items.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{someList} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{someTuple}\PY{p}{)}
+\PY{n}{someList}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{addItem}\PY{p}{)}
+\PY{n}{newTuple} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{n}{someList}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The new tuple is: }\PY{l+s+si}{\PYZob{}newTuple\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Enter the items: 21 12 2019
+Enter the item to add: debian
+The new tuple is: (21, 12, 2019, 'debian')
+
+Alternatively, we can convert the tuple into list and add items.
+The new tuple is: (21, 12, 2019, 'debian')
+    \end{Verbatim}
+
+    Q5. Write a Python program to convert a tuple to a string.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someTuple} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{str}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the characters: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n}{convertedString} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{someTuple}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Converted string: }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}convertedString\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Enter the characters: d e b i a n
+Converted string: 'debian'.
+    \end{Verbatim}
+
 
     % Add a bibliography block to the postdoc
     
