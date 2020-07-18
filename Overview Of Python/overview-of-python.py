@@ -5,7 +5,7 @@
 #
 # This contains the solution of `List` and `Tuple` questions as the lab assignment.
 
-# #### List Questions:
+# #### List
 
 # ###### Q1. Write a Python program to sum all the items in a list.
 
@@ -79,4 +79,67 @@ import math
 print()
 print("Alternatively, we can use the 'prod' function from the 'math' library:")
 print(f"math.prod(numbers): {math.prod(numbers)}")
+
+
+# #### Tuple
+
+# ###### Q1. Write a Python program to create a tuple.
+
+# In[5]:
+
+
+someTuple = (21, 12)
+print(type(someTuple))
+print(someTuple)
+
+
+# ###### Q2. Write a Python program to create a tuple with different data types.
+
+# In[6]:
+
+
+someTuple = (21, 'debian', 12)
+print(someTuple)
+
+
+# ###### Q3. Write a Python program to create a tuple with numbers and print one item.
+
+# In[7]:
+
+
+someTuple = tuple(map(int, input("Enter the items: ").split()))
+itemNumber = int(input("Enter the item number you want to print: "))
+
+print(f"Item number {itemNumber} is '{someTuple[itemNumber-1]}'.")
+
+
+# ###### Q4. Write a Python program to add an item in a tuple.
+
+# In[8]:
+
+
+someTuple = tuple(map(int, input("Enter the items: ").split()))
+addItem = input("Enter the item to add: ")
+
+# way 1:
+newTuple = someTuple + (addItem,)
+print(f"The new tuple is: {newTuple}")
+
+# way 2:
+print()
+print("Alternatively, we can convert the tuple into list and add items.")
+someList = list(someTuple)
+someList.append(addItem)
+newTuple = tuple(someList)
+print(f"The new tuple is: {newTuple}")
+
+
+# ###### Q5. Write a Python program to convert a tuple to a string.
+
+# In[9]:
+
+
+someTuple = tuple(map(str, input("Enter the characters: ").split()))
+convertedString = ''.join(someTuple)
+print(f"Converted string: '{convertedString}'.")
 
