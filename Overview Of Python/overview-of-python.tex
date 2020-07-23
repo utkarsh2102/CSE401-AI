@@ -616,6 +616,469 @@ Converted string: 'debian'.
 
     \noindent\rule{16.5cm}{0.4pt}
 
+    \hypertarget{sets}{%
+\paragraph{Sets}\label{sets}}
+
+    Q1. Write a Python program to create a set.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{someSet}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{someSet}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<class 'set'>
+\{12, 21\}
+    \end{Verbatim}
+
+    Q2. Write a Python program to add member(s) in a set.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{\PYZcb{}}
+\PY{n}{member} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the member element: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{someSet}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{n}{member}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The updated set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Enter the member element: debian
+The updated set is \{'debian', 12, 21\}.
+    \end{Verbatim}
+
+    Q3. Write a Python program to remove item(s) from set.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{debian}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{itemNumber} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the number you want to remove: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{someSet}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{n}{itemNumber}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The updated set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The set is \{'debian', 12, 21\}.
+Enter the number you want to remove: 21
+
+The updated set is \{'debian', 12\}.
+    \end{Verbatim}
+
+    Q4. Write a Python program to remove an item from a set if it is present
+in the set.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{2019}\PY{p}{,} \PY{l+m+mi}{2020}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{itemNumber} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the number you want to remove: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+
+\PY{k}{if} \PY{n}{itemNumber} \PY{o+ow}{in} \PY{n}{someSet}\PY{p}{:}
+    \PY{n}{someSet}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{n}{itemNumber}\PY{p}{)}
+\PY{k}{else}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}itemNumber\PYZcb{}}\PY{l+s+s2}{ is not present in the set!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The updated set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The set is \{2019, 12, 21, 2020\}.
+Enter the number you want to remove: 2020
+
+The updated set is \{2019, 12, 21\}.
+    \end{Verbatim}
+
+    \hypertarget{dictionary}{%
+\paragraph{Dictionary}\label{dictionary}}
+
+    Q1. Write a Python program to create a dictionary.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Year}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+m+mi}{2020}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Month}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{July}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{someDict}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{someDict}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<class 'dict'>
+\{'Year': 2020, 'Month': 'July'\}
+    \end{Verbatim}
+
+    Q2. Write a Python script to add a key to a dictionary.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Year}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+m+mi}{2020}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Month}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{July}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The dictionary right now is: }\PY{l+s+si}{\PYZob{}someDict\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{inputDict} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter }\PY{l+s+si}{\PYZob{}key\PYZcb{}}\PY{l+s+s2}{ and }\PY{l+s+si}{\PYZob{}value\PYZcb{}}\PY{l+s+s2}{ separated by a space to add in the dictionary: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{someDict}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{n+nb}{dict}\PY{p}{(}\PY{n}{x}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{inputDict}\PY{o}{.}\PY{n}{splitlines}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The updated dictionary is: }\PY{l+s+si}{\PYZob{}someDict\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The dictionary right now is: \{'Year': 2020, 'Month': 'July'\}.
+Enter \{key\} and \{value\} separated by a space to add in the dictionary: Date 18
+
+The updated dictionary is: \{'Year': 2020, 'Month': 'July', 'Date': '18'\}.
+    \end{Verbatim}
+
+    Q3. Write a Python script to concatenate following dictionaries to
+create a new one.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Utkarsh Gupta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The dictionary right now is: }\PY{l+s+si}{\PYZob{}someDict\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{key}\PY{p}{,} \PY{n}{value} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter key and value separated by a space: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{newDict} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{p}{)}
+\PY{n}{newDict}\PY{p}{[}\PY{n}{key}\PY{p}{]} \PY{o}{=} \PY{n}{value}
+\PY{n}{someDict}\PY{o}{.}\PY{n}{update}\PY{p}{(}\PY{n}{newDict}\PY{p}{)}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The concatenated dictionary is: }\PY{l+s+si}{\PYZob{}someDict\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The dictionary right now is: \{'Name': 'Utkarsh Gupta'\}.
+Enter key and value separated by a space: Enrollment A2305217557
+
+The concatenated dictionary is: \{'Name': 'Utkarsh Gupta', 'Enrollment':
+'A2305217557'\}.
+    \end{Verbatim}
+
+    Q4. Write a Python script to check whether a given key already exists in
+a dictionary.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Utkarsh Gupta}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enrollment}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A2305217557}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+\PY{n}{key} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the key to check: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{k}{if} \PY{n}{key} \PY{o+ow}{in} \PY{n}{someDict}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The key }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}key\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ is present.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{k}{else}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The key }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+si}{\PYZob{}key\PYZcb{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ is NOT present.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Enter the key to check: Name
+The key 'Name' is present.
+    \end{Verbatim}
+
+    \hypertarget{functions}{%
+\paragraph{Functions}\label{functions}}
+
+    Q1. Write a Python function that takes a list and returns a new list
+with unique elements of the first list.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{uniqueList}\PY{p}{(}\PY{n}{someList}\PY{p}{)}\PY{p}{:}
+    \PY{n}{newList} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{someList}\PY{p}{:}
+        \PY{k}{if} \PY{n}{i} \PY{o+ow}{in} \PY{n}{newList}\PY{p}{:}
+            \PY{k}{continue}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{newList}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The original list is: }\PY{l+s+si}{\PYZob{}someList\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The list of unique elements is: }\PY{l+s+si}{\PYZob{}newList\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{someList} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input the list: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n}{uniqueList}\PY{p}{(}\PY{n}{someList}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Input the list: 1,2,3,4,5,4,3,2,1,2,3,4,5
+
+The original list is: [1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5].
+The list of unique elements is: [1, 2, 3, 4, 5].
+    \end{Verbatim}
+
+    \hypertarget{mini-projects}{%
+\paragraph{Mini Projects}\label{mini-projects}}
+
+    Project 1: Make a simple mathematical calculator which can perform
+addition, subtraction, multiplication and division.
+
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{add}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{x} \PY{o}{+} \PY{n}{y}
+
+\PY{k}{def} \PY{n+nf}{subtract}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{y}
+
+\PY{k}{def} \PY{n+nf}{multiply}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{n}{y}
+
+\PY{k}{def} \PY{n+nf}{divide}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{x} \PY{o}{/} \PY{n}{y}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Select operation:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{1. Add}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{2. Subtract}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{3. Multiply}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{4. Divide}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+
+\PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+    \PY{n}{choice} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter choice (1/2/3/4): }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{k}{if} \PY{n}{choice} \PY{o+ow}{in} \PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+        \PY{n}{number1} \PY{o}{=} \PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter first number: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+        \PY{n}{number2} \PY{o}{=} \PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter second number: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+
+        \PY{k}{if} \PY{n}{choice} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}number1\PYZcb{}}\PY{l+s+s2}{ + }\PY{l+s+si}{\PYZob{}number2\PYZcb{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{add(number1, number2)\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+        \PY{k}{elif} \PY{n}{choice} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}number1\PYZcb{}}\PY{l+s+s2}{ \PYZhy{} }\PY{l+s+si}{\PYZob{}number2\PYZcb{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{subtract(number1, number2)\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+        \PY{k}{elif} \PY{n}{choice} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}number1\PYZcb{}}\PY{l+s+s2}{ * }\PY{l+s+si}{\PYZob{}number2\PYZcb{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{multiply(number1, number2)\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+        \PY{k}{elif} \PY{n}{choice} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{4}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}number1\PYZcb{}}\PY{l+s+s2}{ / }\PY{l+s+si}{\PYZob{}number2\PYZcb{}}\PY{l+s+s2}{ = }\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{divide(number1, number2)\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+        \PY{k}{break}
+    \PY{k}{else}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Invalid input.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Select operation:
+1. Add
+2. Subtract
+3. Multiply
+4. Divide
+
+Enter choice (1/2/3/4): 3
+Enter first number: 2
+Enter second number: 3.5
+
+2.0 * 3.5 = 7.0
+    \end{Verbatim}
+
+    Project 2: Make a rock-paper-scissors game where it is the player vs the
+computer. The computer's answer will be randomly generated, while the
+program will ask the user for their input. This project will better your
+understanding of while loops and if statements.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{20}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{random}
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{GAME RULES:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rock  vs  Paper    :  Paper wins!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Paper vs  Scissor  :  Scissor wins!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rock  vs  Scissor  :  Rock wins!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{k}{while}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Select:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ 1. Rock}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ 2. Paper}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ 3. Scissor}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ 4. Stop}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{choice} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Please enter your choice: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+
+    \PY{n}{options} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rock}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Paper}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Scissor}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stop}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+
+    \PY{k}{if} \PY{p}{(}\PY{n}{choice} \PY{o}{==} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Game exited, thank you for playing!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{k}{break}
+
+    \PY{k}{if}\PY{p}{(}\PY{n}{choice} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{options}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Incorrect choice, exiting...}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Your choice: }\PY{l+s+si}{\PYZob{}options[choice]\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{n}{system} \PY{o}{=} \PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{System}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s choice: }\PY{l+s+si}{\PYZob{}options[system]\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{k}{if} \PY{p}{(}\PY{n}{choice} \PY{o}{==} \PY{n}{system}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{It}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{s a tie!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{k}{elif}\PY{p}{(}\PY{p}{(}\PY{n}{choice} \PY{o}{==} \PY{l+m+mi}{1} \PY{o+ow}{and} \PY{n}{system} \PY{o}{==} \PY{l+m+mi}{2}\PY{p}{)} \PY{o+ow}{or} \PY{p}{(}\PY{n}{choice} \PY{o}{==} \PY{l+m+mi}{2} \PY{o+ow}{and} \PY{n}{system} \PY{o}{==}\PY{l+m+mi}{1} \PY{p}{)}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Paper wins!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{k}{elif}\PY{p}{(}\PY{p}{(}\PY{n}{choice} \PY{o}{==} \PY{l+m+mi}{1} \PY{o+ow}{and} \PY{n}{system} \PY{o}{==} \PY{l+m+mi}{3}\PY{p}{)} \PY{o+ow}{or} \PY{p}{(}\PY{n}{choice} \PY{o}{==} \PY{l+m+mi}{3} \PY{o+ow}{and} \PY{n}{system} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Rock wins!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{k}{else}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Scissor wins!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+GAME RULES:
+Rock  vs  Paper    :  Paper wins!
+Paper vs  Scissor  :  Scissor wins!
+Rock  vs  Scissor  :  Rock wins!
+-------------------------------------
+
+Select:
+ 1. Rock
+ 2. Paper
+ 3. Scissor
+ 4. Stop
+
+Please enter your choice: 3
+Your choice: Scissor
+System's choice: Rock
+
+Rock wins!
+-------------------------------------
+
+Select:
+ 1. Rock
+ 2. Paper
+ 3. Scissor
+ 4. Stop
+
+Please enter your choice: 2
+Your choice: Paper
+System's choice: Paper
+
+It's a tie!
+-------------------------------------
+
+Select:
+ 1. Rock
+ 2. Paper
+ 3. Scissor
+ 4. Stop
+
+Please enter your choice: 4
+
+Game exited, thank you for playing!
+    \end{Verbatim}
+
+    \hypertarget{classes}{%
+\paragraph{Classes}\label{classes}}
+
+    Q1. Write a Python class to find two elements from a list that have sum
+equal to zero.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{21}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{SumZero}\PY{p}{:}
+    \PY{k}{def} \PY{n+nf}{main}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{someList}\PY{p}{)}\PY{p}{:}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{someList}\PY{p}{:}
+            \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n}{someList}\PY{p}{:}
+                \PY{k}{if} \PY{p}{(}\PY{n}{i} \PY{o}{+} \PY{n}{j} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
+                    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{(}\PY{l+s+si}{\PYZob{}i\PYZcb{}}\PY{l+s+s2}{, }\PY{l+s+si}{\PYZob{}j\PYZcb{}}\PY{l+s+s2}{)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                \PY{k}{else}\PY{p}{:}
+                    \PY{k}{continue}
+
+\PY{n}{someList} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{int}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input the list: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The possible sets are: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{SumZero}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{main}\PY{p}{(}\PY{n}{someList}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Input the list: -1,2,3,4,1,-3,5
+
+The possible sets are:
+(-1, 1)
+(3, -3)
+(1, -1)
+(-3, 3)
+    \end{Verbatim}
+
+    \hypertarget{file-processing}{%
+\paragraph{File Processing}\label{file-processing}}
+
+    Q1. Write a Python program to count the frequency of words in the file.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{25}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Creating a file with some dummy content.}
+\PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ai.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w+}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{f}\PY{o}{.}\PY{n}{write}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{This is test file with some dummy content}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{f}\PY{o}{.}\PY{n}{write}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dummy content is the best for testing}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{f}\PY{o}{.}\PY{n}{write}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Testing is important}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{f}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Performing the frequency search.}
+\PY{n}{dummyText} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ai.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{someDict} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{p}{)}
+
+\PY{k}{for} \PY{n}{line} \PY{o+ow}{in} \PY{n}{dummyText}\PY{p}{:}
+    \PY{n}{line} \PY{o}{=} \PY{n}{line}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)}
+    \PY{n}{line} \PY{o}{=} \PY{n}{line}\PY{o}{.}\PY{n}{lower}\PY{p}{(}\PY{p}{)}
+    \PY{n}{words} \PY{o}{=} \PY{n}{line}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+    \PY{k}{for} \PY{n}{word} \PY{o+ow}{in} \PY{n}{words}\PY{p}{:}
+        \PY{k}{if} \PY{n}{word} \PY{o+ow}{in} \PY{n}{someDict}\PY{p}{:}
+            \PY{n}{someDict}\PY{p}{[}\PY{n}{word}\PY{p}{]} \PY{o}{=} \PY{n}{someDict}\PY{p}{[}\PY{n}{word}\PY{p}{]} \PY{o}{+} \PY{l+m+mi}{1}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{someDict}\PY{p}{[}\PY{n}{word}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{1}
+
+
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The frequency of words are:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{k}{for} \PY{n}{key} \PY{o+ow}{in} \PY{n+nb}{list}\PY{p}{(}\PY{n}{someDict}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}key\PYZcb{}}\PY{l+s+s2}{: }\PY{l+s+si}{\PYZob{}someDict[key]\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The frequency of words are:
+
+this: 1
+is: 3
+test: 1
+file: 1
+with: 1
+some: 1
+dummy: 2
+content: 2
+the: 1
+best: 1
+for: 1
+testing: 2
+important: 1
+    \end{Verbatim}
+
 
     % Add a bibliography block to the postdoc
 
