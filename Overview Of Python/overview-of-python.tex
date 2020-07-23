@@ -366,8 +366,9 @@
     \hypertarget{overview-of-python}{%
 \section{Overview of Python}\label{overview-of-python}}
 
-This contains the solution of \texttt{List} and \texttt{Tuple} questions
-as the lab assignment.
+This contains the solution of \texttt{List}, \texttt{Tuple},
+\texttt{Set}, \texttt{Dictionary}, \texttt{Functions}, \texttt{Classes},
+and \texttt{File\ Processing} questions as given in the lab assignment.
 
     \hypertarget{list-questions}{%
 \subsection{List}\label{list-questions}}
@@ -615,14 +616,18 @@ Converted string: 'debian'.
     \end{Verbatim}
 
     \noindent\rule{16.5cm}{0.4pt}
+    \newpage
 
     \hypertarget{sets}{%
-\paragraph{Sets}\label{sets}}
+\subsection{Set}\label{sets}}
 
-    Q1. Write a Python program to create a set.
+A \texttt{Set} is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed). However, a set itself is mutable. We can add or remove items from it.
+
+    ~\\
+    \textbf{Q1. Write a Python program to create a set.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{\PYZcb{}}
 \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{someSet}\PY{p}{)}\PY{p}{)}
@@ -635,10 +640,13 @@ Converted string: 'debian'.
 \{12, 21\}
     \end{Verbatim}
 
-    Q2. Write a Python program to add member(s) in a set.
+    \noindent\rule{16.5cm}{0.4pt}
+
+    ~\\
+    \textbf{Q2. Write a Python program to add member(s) in a set.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{\PYZcb{}}
 \PY{n}{member} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the member element: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -653,10 +661,13 @@ Enter the member element: debian
 The updated set is \{'debian', 12, 21\}.
     \end{Verbatim}
 
-    Q3. Write a Python program to remove item(s) from set.
+    \noindent\rule{16.5cm}{0.4pt}
+
+    ~\\
+    \textbf{Q3. Write a Python program to remove item(s) from set.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{debian}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{\PYZcb{}}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -675,11 +686,14 @@ Enter the number you want to remove: 21
 The updated set is \{'debian', 12\}.
     \end{Verbatim}
 
-    Q4. Write a Python program to remove an item from a set if it is present
-in the set.
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
+
+     ~\\
+    \textbf{Q4. Write a Python program to remove an item from a set if it is present in the set.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{11}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someSet} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+m+mi}{21}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{2019}\PY{p}{,} \PY{l+m+mi}{2020}\PY{p}{\PYZcb{}}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The set is }\PY{l+s+si}{\PYZob{}someSet\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -702,13 +716,19 @@ Enter the number you want to remove: 2020
 The updated set is \{2019, 12, 21\}.
     \end{Verbatim}
 
-    \hypertarget{dictionary}{%
-\paragraph{Dictionary}\label{dictionary}}
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
 
-    Q1. Write a Python program to create a dictionary.
+    \hypertarget{dictionary}{%
+\subsection{Dictionary}\label{dictionary}}
+
+A \texttt{Dictionary} is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values.
+
+     ~\\
+    \textbf{Q1. Write a Python program to create a dictionary.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{13}{\boxspacing}
+\prompt{In}{incolor}{14}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Year}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+m+mi}{2020}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Month}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{July}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
 \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{someDict}\PY{p}{)}\PY{p}{)}
@@ -721,7 +741,10 @@ The updated set is \{2019, 12, 21\}.
 \{'Year': 2020, 'Month': 'July'\}
     \end{Verbatim}
 
-    Q2. Write a Python script to add a key to a dictionary.
+    \noindent\rule{16.5cm}{0.4pt}
+
+     ~\\
+    \textbf{Q2. Write a Python script to add a key to a dictionary.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{15}{\boxspacing}
@@ -744,11 +767,14 @@ Enter \{key\} and \{value\} separated by a space to add in the dictionary: Date 
 The updated dictionary is: \{'Year': 2020, 'Month': 'July', 'Date': '18'\}.
     \end{Verbatim}
 
-    Q3. Write a Python script to concatenate following dictionaries to
-create a new one.
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
+
+     ~\\
+    \textbf{Q3. Write a Python script to concatenate following dictionaries to create a new one.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{16}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Utkarsh Gupta}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{The dictionary right now is: }\PY{l+s+si}{\PYZob{}someDict\PYZcb{}}\PY{l+s+s2}{.}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -771,11 +797,13 @@ The concatenated dictionary is: \{'Name': 'Utkarsh Gupta', 'Enrollment':
 'A2305217557'\}.
     \end{Verbatim}
 
-    Q4. Write a Python script to check whether a given key already exists in
-a dictionary.
+    \noindent\rule{16.5cm}{0.4pt}
+
+     ~\\
+    \textbf{Q4. Write a Python script to check whether a given key already exists in a dictionary.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{someDict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Utkarsh Gupta}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enrollment}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A2305217557}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
 \PY{n}{key} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Enter the key to check: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -792,14 +820,19 @@ Enter the key to check: Name
 The key 'Name' is present.
     \end{Verbatim}
 
-    \hypertarget{functions}{%
-\paragraph{Functions}\label{functions}}
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
 
-    Q1. Write a Python function that takes a list and returns a new list
-with unique elements of the first list.
+    \hypertarget{functions}{%
+\subsection{Functions}\label{functions}}
+
+A \texttt{Function} is a block of code which only runs when it is called. You can pass data, known as parameters, into a function. A function can return data as a result.
+
+     ~\\
+    \textbf{Q1. Write a Python function that takes a list and returns a new list with unique elements of the first list.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
+\prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{uniqueList}\PY{p}{(}\PY{n}{someList}\PY{p}{)}\PY{p}{:}
     \PY{n}{newList} \PY{o}{=} \PY{p}{[}\PY{p}{]}
@@ -825,15 +858,18 @@ The original list is: [1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5].
 The list of unique elements is: [1, 2, 3, 4, 5].
     \end{Verbatim}
 
-    \hypertarget{mini-projects}{%
-\paragraph{Mini Projects}\label{mini-projects}}
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
 
-    Project 1: Make a simple mathematical calculator which can perform
-addition, subtraction, multiplication and division.
+    \hypertarget{mini-projects}{%
+\subsection{Mini Projects}\label{mini-projects}}
+
+     ~\\
+    \textbf{Project 1: Make a simple mathematical calculator which can perform addition, subtraction, multiplication and division.}
 
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{12}{\boxspacing}
+\prompt{In}{incolor}{19}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{add}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{n}{x} \PY{o}{+} \PY{n}{y}
@@ -894,10 +930,10 @@ Enter second number: 3.5
 2.0 * 3.5 = 7.0
     \end{Verbatim}
 
-    Project 2: Make a rock-paper-scissors game where it is the player vs the
-computer. The computer's answer will be randomly generated, while the
-program will ask the user for their input. This project will better your
-understanding of while loops and if statements.
+    \noindent\rule{16.5cm}{0.4pt}
+
+     ~\\
+    \textbf{Project 2: Make a rock-paper-scissors game where it is the player vs the computer. The computer's answer will be randomly generated, while the program will ask the user for their input. This project will better your understanding of while loops and if statements.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{20}{\boxspacing}
@@ -989,11 +1025,16 @@ Please enter your choice: 4
 Game exited, thank you for playing!
     \end{Verbatim}
 
-    \hypertarget{classes}{%
-\paragraph{Classes}\label{classes}}
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
 
-    Q1. Write a Python class to find two elements from a list that have sum
-equal to zero.
+    \hypertarget{classes}{%
+\subsection{Classes}\label{classes}}
+
+A \texttt{Class} is a code template for creating objects. Objects have member variables and have behaviour associated with them. In python a class is created by the keyword class . An object is created using the constructor of the class. This object will then be called the instance of the class.
+
+     ~\\
+    \textbf{Q1. Write a Python class to find two elements from a list that have sum equal to zero.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{21}{\boxspacing}
@@ -1024,13 +1065,17 @@ The possible sets are:
 (-3, 3)
     \end{Verbatim}
 
-    \hypertarget{file-processing}{%
-\paragraph{File Processing}\label{file-processing}}
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
 
-    Q1. Write a Python program to count the frequency of words in the file.
+    \hypertarget{file-processing}{%
+\subsection{File Processing}\label{file-processing}}
+
+     ~\\
+    \textbf{Q1. Write a Python program to count the frequency of words in the file.}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{25}{\boxspacing}
+\prompt{In}{incolor}{22}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Creating a file with some dummy content.}
 \PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ai.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w+}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
@@ -1079,6 +1124,7 @@ testing: 2
 important: 1
     \end{Verbatim}
 
+    \noindent\rule{16.5cm}{0.4pt}
 
     % Add a bibliography block to the postdoc
 
