@@ -2,7 +2,10 @@
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-    
+
+    \usepackage{graphicx}
+    \usepackage{animate}
+    \usepackage{movie15}
     \usepackage{iftex}
     \ifPDFTeX
     	\usepackage[T1]{fontenc}
@@ -137,12 +140,17 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Lab3\_UtkarshGupta\_8PuzzleSinglePlayerGame(AStar)}
+    \title{%
+    CSE 401: Artificial Intelligence \\
+    \large 8 Puzzle Single Player Game (A* Algorithm)}
     
+    \author{%
+      Utkarsh Gupta \\
+      \small A2305217557 \\
+      \small 7CSE 8Y}
+    \date{August 01st, 2020}
     
-    
-    
-    
+
 % Pygments definitions
 \makeatletter
 \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
@@ -359,11 +367,8 @@
     \maketitle
     
     
-
-    
-    8 Puzzle Single Player Game (A* Algorithm)
-
-    Introduction
+    \hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 An instance of the n-puzzle game consists of a board holding \(n^{2}-1\)
 distinct movable tiles, plus an empty space. The tiles are numbers from
@@ -380,6 +385,8 @@ initial state. The blank space may be swapped with a component in one of
 the four directions \{`Up', `Down', `Left', `Right'\}, one move at a
 time.
 
+    ~\\
+    ~\\
     In this 8 puzzle problem is discussed.
 
 Given a 3×3 board with 8 tiles (every tile has one number from 1 to 8)
@@ -391,16 +398,19 @@ example:
 \begin{figure}
 \centering
 \includegraphics{puzzle8init.jpg}
-\caption{alt text}
+\caption{Puzzle 8 Init}
 \end{figure}
 
+    \newpage
     \textbf{A* Algorithm:} It is a searching algorithm that searches for the
 shortest path between the initial and the final state. It is used in
 various applications, such as maps. In maps the A* algorithm is used to
 calculate the shortest distance between the source (initial state) and
 the destination (final state).
 
-    Explanation
+    \noindent\rule{16.5cm}{0.4pt}
+    ~\\
+    \section{Explanation}
 
 A* algorithm has 3 parameters:
 
@@ -408,26 +418,49 @@ A* algorithm has 3 parameters:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  g : the cost of moving from the initial cell to the current cell.
+   \textbf{g} : the cost of moving from the initial cell to the current cell.
 \item
-  h : also known as the heuristic value, it is the estimated cost of
+   \textbf{h} : also known as the heuristic value, it is the estimated cost of
   moving from the current cell to the final cell. The actual cost cannot
   be calculated until the final cell is reached. Hence, h is the
   estimated cost. We must make sure that there is never an over
   estimation of the cost.
 \item
-  f : it is the sum of g and h. So, f = g + h
+   \textbf{f} : it is the sum of g and h. So, f = g + h
 \end{enumerate}
 
-    Example: A*
+    ~\\
+    \textbf{Example}: A*
 
-Initial State: 1, 2, 5, 3, 4, 0, 6, 7, 8
+    \textbf{Initial State}: 1, 2, 5, 3, 4, 0, 6, 7, 8
+
+~\\
+\begin{figure}
+\centering
+\includegraphics{initial_state.png}
+\caption{Initial State}
+\end{figure}
+~\\
 
     The path to the goal node with A* (also the nodes expanded by A*) is
 shown in the following figure:
 
-    \textbf{Dear Students, in the code below there are few \emph{TODO} task
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{sample_path.png}
+\caption{Sample Path}
+\end{figure}
+
+    \textbf{Dear students, in the code below there are few \emph{TODO} task
 that you have to complete in this lab session.}
+
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
+
+    \section{Code}
+
+    Below is the code (along with the \textbf{bonus task}), compiled by Utkarsh Gupta (A2305217557).
+    \vspace{3mm}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{1}{\boxspacing}
@@ -581,7 +614,7 @@ that you have to complete in this lab session.}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{6}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Start executing the 8\PYZhy{}puzzle with setting up the initial state}
 \PY{c+c1}{\PYZsh{} Here we have considered 3 initial state intitalized using state variable}
@@ -775,15 +808,6 @@ Bonus task done by Utkarsh Gupta (A2305217557)
 ------------------------------------------
     \end{Verbatim}
 
-    \textbf{BONUS TASK:} Now, perform the following task before submitting
-the assignment:
+    \noindent\rule{16.5cm}{0.4pt}
 
-Show the path in traversing the A-star algorithm of each state from
-intial\_state to goal state.
-
-
-    % Add a bibliography block to the postdoc
-    
-    
-    
 \end{document}
