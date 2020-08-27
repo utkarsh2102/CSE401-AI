@@ -65,7 +65,7 @@ game_state = [[' ',' ',' '],
 players = ['X','O']
 
 
-# In[4]:
+# In[3]:
 
 
 #Method for checking the correct move on Tic-Tac-Toe
@@ -78,7 +78,7 @@ def play_move(state, player, block_num):
         None
 
 
-# In[5]:
+# In[4]:
 
 
 #Method to copy the current game state to new_state of Tic-Tac-Toe
@@ -90,7 +90,7 @@ def copy_game_state(state):
     return new_state
 
 
-# In[7]:
+# In[5]:
 
 
 #Method to check the current state of the Tic-Tac-Toe
@@ -132,7 +132,7 @@ def check_current_state(game_state):
     return None, "Not Done"
 
 
-# In[8]:
+# In[6]:
 
 
 #Method to print the Tic-Tac-Toe Board
@@ -146,7 +146,7 @@ def print_board(game_state):
     print('----------------')
 
 
-# In[10]:
+# In[7]:
 
 
 #Method for implement the Minimax Algorithm
@@ -206,7 +206,7 @@ def getBestMove(state, player):
     return best_move
 
 
-# In[ ]:
+# In[8]:
 
 
 # Now PLaying the Tic-Tac-Toe Game
@@ -261,3 +261,41 @@ while play_again == 'Y' or play_again == 'y':
 
 
 # <h3>BONUS QUESTIONS: CREATE ALPHA-BETA PRUNING FUNCTION. FIND THE NUMBER OF STATES PRUNED BY THE ALGORITHM</h3>
+
+# In[ ]:
+
+
+# Initial values of Aplha and Beta
+MAX, MIN = 1000, -1000
+
+# Returns optimal value for current player
+#(Initially called for root and maximizer)
+def aplha_beta_pruning(depth, nodeIndex, maximizingPlayer,
+        values, alpha, beta):
+
+    if depth == 3:
+        return values[nodeIndex]
+
+    if maximizingPlayer:
+        best_move = MIN
+        for i in range(0, 2):
+            val = aplha_beta_pruning(depth + 1, nodeIndex * 2 + i, False, values, alpha, beta)
+            best_move = max(best_move, val)
+            alpha = max(alpha, best_move)
+
+            if beta <= alpha:
+                break
+        return best_move
+
+    else:
+        best_move = MAX
+        for i in range(0, 2):
+            val = aplha_beta_pruning(depth + 1, nodeIndex * 2 + i,True, values, alpha, beta)
+            best_move = min(best_move, val)
+            beta = min(beta, best_move)
+
+        # Alpha Beta Pruning
+            if beta <= alpha:
+                break
+    return best_move
+
