@@ -137,8 +137,15 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Lab5\_TicTacToe\_MinimaxAlgorithm}
-    
+    \title{%
+    CSE 401: Artificial Intelligence \\
+    \Large Tic-Tac-Toe Game using MiniMax Algorithm}
+
+    \author{%
+      Utkarsh Gupta \\
+      \small A2305217557 \\
+      \small 7CSE 8Y}
+    \date{August 25th, 2020}
     
     
     
@@ -358,12 +365,8 @@
     
     \maketitle
     
-    
-
-    
-    Tic-Tac-Toe Game using MiniMax Algorithm
-
-    What is Minimax?
+    \hypertarget{introduction}{%
+\section{What is MiniMax?}\label{introduction}}
 
 Minimax is a artifical intelligence applied in two player games, such as
 tic-tac-toe, checkers, chess and go. This games are known as zero-sum
@@ -380,7 +383,14 @@ adding opponents into the mix. Minimax algorithm keeps playing the turns
 of both player and the opponent optimally to figure out the best
 possible move.
 
-    How does it works?
+\begin{figure}
+\centering
+\includegraphics[width=13cm]{assets/minimax.png}
+\caption{MiniMax}
+\end{figure}
+
+    \hypertarget{how-does-it-work}{%
+\section{How does it work?}\label{how-does-it-work}}
 
 The algorithm search, recursively, the best move that leads the Max
 player to win or not lose (draw). It consider the current state of the
@@ -411,6 +421,12 @@ to move, i.e., you are at the root and your opponent at next level.
 Which move you would make as a maximizing player considering that your
 opponent also plays optimally?
 
+\begin{figure}
+\centering
+\includegraphics[width=10cm]{assets/example1.png}
+\caption{MiniMax}
+\end{figure}
+
 Since this is a backtracking based algorithm, it tries all possible
 moves, then backtracks and makes a decision.
 
@@ -422,7 +438,15 @@ will choose 2 as it is the least among the two values. Being the
 maximizer you would choose the larger value that is 3. Hence the optimal
 move for the maximizer is to go LEFT and the optimal value is 3.
 
+\newpage
+
 Now the game tree looks like below :
+
+\begin{figure}
+\centering
+\includegraphics[width=13cm]{assets/example2.png}
+\caption{MiniMax}
+\end{figure}
 
 The above tree shows two possible scores when maximizer makes left and
 right moves.
@@ -430,6 +454,12 @@ right moves.
 Note: Even though there is a value of 9 on the right subtree, the
 minimizer will never pick that. We must always assume that our opponent
 plays optimally.
+
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
+    \newpage
+    
+    \section{Code}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{1}{\boxspacing}
@@ -741,11 +771,14 @@ Wanna try again?(Y/N) : N
 Thank you for playing Tic-Tac-Toe Game!!!!!!!
     \end{Verbatim}
 
-    BONUS QUESTIONS: CREATE ALPHA-BETA PRUNING FUNCTION. FIND THE NUMBER OF
-STATES PRUNED BY THE ALGORITHM
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
+
+    \section{Bonus Question}
+
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Initial values of Aplha and Beta }
 \PY{n}{MAX}\PY{p}{,} \PY{n}{MIN} \PY{o}{=} \PY{l+m+mi}{1000}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1000}
@@ -783,9 +816,7 @@ STATES PRUNED BY THE ALGORITHM
 \end{Verbatim}
 \end{tcolorbox}
 
+~\\
+\noindent\rule{16.5cm}{0.4pt}
 
-    % Add a bibliography block to the postdoc
-    
-    
-    
 \end{document}
