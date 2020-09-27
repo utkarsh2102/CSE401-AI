@@ -137,9 +137,15 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Lab8\_KnapsackProblem\_BruteForce\_And\_DynamicProgramming}
-    
-    
+    \title{%
+    Knapsack Problem using Brute Force \\ and Dynamic Programming \\
+    \large CSE 401: Artificial Intelligence }
+
+    \author{%
+      Samyak Jain \\
+      \small A2305217638 \\
+      \small 7CSE 8Y}
+    \date{September 23rd, 2020}
     
     
     
@@ -356,13 +362,14 @@
 
 \begin{document}
     
-    \maketitle
-    
-    
 
-    
-    Lab8: Implement a Knapsack problem using Brute Force Method and Dynamic
-Programming
+    \maketitle
+
+\hypertarget{knapsack-problem}{%
+\section{Knapsack Problem}\label{knapsack-problem}}
+
+\textbf{Implement a Knapsack problem using Brute Force Method and Dynamic
+Programming}
 
     The knapsack problem is an optimization problem that takes a common
 computational need---finding the best use of limited resources given a
@@ -370,6 +377,9 @@ finite set of usage options---and spins it into a fun story. A thief
 enters a shop with the intent to steal. He has a knapsack, and he is
 limited in what he can steal by the capacity of the knapsack. How does
 he figure out what to put into the knapsack?
+
+
+\subsection{Brute Force Approach}
 
     If we tried to solve this problem using a brute-force approach, we would
 look at every combination of items available to be put in the knapsack.
@@ -470,10 +480,16 @@ respectively.
 The total execution time taken is 0.0247344970703125.
     \end{Verbatim}
 
-    Implement a Knapsack problem using Dynamic Programming. Compare the
-execution time of brute-force and dynamic programming algorithms
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
 
-    Instead, use a technique known as dynamic programming, which is similar
+~\\
+\subsection{Dynamic Programming Approach}
+
+\textbf{Implement a Knapsack problem using Dynamic Programming. Compare the
+execution time of brute-force and dynamic programming algorithms.}
+
+Instead, use a technique known as dynamic programming, which is similar
 in concept to memoization. Instead of solving a problem outright with a
 brute-force approach, in dynamic programming one solves subproblems that
 make up the larger problem, stores those results, and utilizes those
@@ -584,9 +600,8 @@ respectively.
 The total time taken is 0.20116853713989258.
     \end{Verbatim}
 
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
 
-    % Add a bibliography block to the postdoc
-    
-    
-    
+
 \end{document}
