@@ -215,7 +215,7 @@ print(string.punctuation)
 # 
 # Time to clean up our tokenized tweet!
 
-# In[14]:
+# In[13]:
 
 
 print()
@@ -256,7 +256,7 @@ print(tweets_clean)
 #  
 # NLTK has different modules for stemming and we will be using the [PorterStemmer](https://www.nltk.org/api/nltk.stem.html#module-nltk.stem.porter) module which uses the [Porter Stemming Algorithm](https://tartarus.org/martin/PorterStemmer/). Let's see how we can use it in the cell below.
 
-# In[15]:
+# In[14]:
 
 
 print()
@@ -285,7 +285,7 @@ print(tweets_stem)
 # 
 # To obtain the same result as in the previous code cells, you will only need to call the function `process_tweet()`. Let's do that in the next cell.
 
-# In[16]:
+# In[15]:
 
 
 def process_tweet(tweet):
@@ -323,7 +323,7 @@ def process_tweet(tweet):
     return tweets_clean
 
 
-# In[17]:
+# In[16]:
 
 
 # choose the same tweet
@@ -346,7 +346,7 @@ print(tweets_stem) # Print the result
 # 
 # In this lab, we will focus on the `build_freqs()` helper function and visualizing a dataset fed into it. In our goal of tweet sentiment analysis, this function will build a dictionary where we can lookup how many times a word appears in the lists of positive or negative tweets. This will be very helpful when extracting the features of the dataset in the week's programming assignment. Let's see how this function is implemented under the hood in this notebook.
 
-# In[18]:
+# In[17]:
 
 
 # Concatenate the lists, 1st part is the positive tweets followed by the negative
@@ -362,7 +362,7 @@ print("Number of tweets: ", len(tweets))
 # * `np.zeros()` - create an array of 0's
 # * `np.append()` - concatenate arrays
 
-# In[19]:
+# In[18]:
 
 
 # make a numpy array representing labels of the tweets
@@ -377,7 +377,7 @@ labels = np.append(np.ones((len(all_positive_tweets))), np.zeros((len(all_negati
 # 
 # A dictionary in Python is declared using curly brackets. Look at the next example:
 
-# In[20]:
+# In[19]:
 
 
 dictionary = {'key1': 1, 'key2': 2}
@@ -389,7 +389,7 @@ dictionary = {'key1': 1, 'key2': 2}
 # 
 # New entries can be inserted into dictionaries using square brackets. If the dictionary already contains the specified key, its value is overwritten.  
 
-# In[21]:
+# In[20]:
 
 
 # Add a new entry
@@ -410,7 +410,7 @@ print(dictionary)
 # 
 # Let us see these in action:
 
-# In[22]:
+# In[21]:
 
 
 # Square bracket lookup when the key exist
@@ -419,7 +419,7 @@ print(dictionary['key2'])
 
 # However, if the key is missing, the operation produce an erro
 
-# In[23]:
+# In[22]:
 
 
 # The output of this line is intended to produce a KeyError
@@ -437,7 +437,7 @@ print(dictionary['key8'])
 # # Same as what you get with get
 # print("item found: ", dictionary.get('key1', -1))
 
-# In[24]:
+# In[23]:
 
 
 # This prints a message because the key is not found
@@ -454,7 +454,7 @@ print(dictionary.get('key7', -1))
 
 # Now that we know the building blocks, let's finally take a look at the **build_freqs()** function below. This is the function that creates the dictionary containing the word counts from each corpus.
 
-# In[25]:
+# In[24]:
 
 
 def build_freqs(tweets, ys):
@@ -486,7 +486,7 @@ def build_freqs(tweets, ys):
     return freqs
 
 
-# In[26]:
+# In[25]:
 
 
 # Call the build_freqs function to create frequency dictionary based on tweets and labels
@@ -499,7 +499,7 @@ print(f'type(freqs) = {type(freqs)}')
 print(f'len(freqs) = {len(freqs)}')
 
 
-# In[27]:
+# In[26]:
 
 
 # prinf all the key-value pair of frequency dictionary
@@ -512,7 +512,7 @@ print(freqs)
 
 # We will select a set of words that we would like to visualize. It is better to store this temporary information in a table that is very easy to use later.
 
-# In[28]:
+# In[27]:
 
 
 # select some words to appear in the report. we will assume that each word is unique (i.e. no duplicates)
@@ -548,7 +548,7 @@ data
 
 # We can then use a scatter plot to inspect this table visually. Instead of plotting the raw counts, we will plot it in the logarithmic scale to take into account the wide discrepancies between the raw counts (e.g. `:)` has 3568 counts in the positive while only 2 in the negative). The red line marks the boundary between positive and negative areas. Words close to the red line can be classified as neutral. 
 
-# In[29]:
+# In[28]:
 
 
 fig, ax = plt.subplots(figsize = (8, 8))
@@ -579,3 +579,107 @@ plt.show()
 # Furthermore, what is the meaning of the crown symbol? It seems to be very negative!
 
 # ## Create a features for the twitter dataset and Apply any machine learning algorithm to classify the tweets and check the accuracy of your model. Try with Logistic Regression for Classification 
+
+# In[29]:
+
+
+import pandas as pd
+data = []
+
+for i in all_positive_tweets:
+  data.append([i,1])
+for i in all_negative_tweets:
+   data.append([i,0])
+
+
+# In[30]:
+
+
+data = pd.DataFrame(data,columns = ['tweet','label'])
+print(data.head())
+
+
+# In[31]:
+
+
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer,CountVectorizer
+x = data['tweet']
+y = data['label']
+
+
+# In[32]:
+
+
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.3,random_state = 53)
+
+
+# In[34]:
+
+
+count_vectorizer = CountVectorizer(stop_words='english',min_df=6)
+count_train = count_vectorizer.fit_transform(x_train)
+count_test = count_vectorizer.transform(x_test)
+print(count_vectorizer.get_feature_names()[:10])
+print(count_vectorizer.vocabulary_.keys())
+
+
+# In[35]:
+
+
+print(count_vectorizer.get_params(deep=True))
+
+
+# In[36]:
+
+
+count_df = pd.DataFrame(count_train.A, columns=count_vectorizer.get_feature_names())
+print(count_df)
+
+
+# In[37]:
+
+
+from sklearn.naive_bayes import MultinomialNB
+from sklearn import metrics
+
+clf = MultinomialNB()
+clf.fit(count_train,y_train)
+pred = clf.predict(count_test)
+
+
+# In[38]:
+
+
+score = metrics.accuracy_score(y_test,pred)
+print(score)
+
+cm = metrics.confusion_matrix(y_test,pred,labels = [1,0])
+print(cm)
+
+
+# In[39]:
+
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+
+clf = SVC()
+
+
+# In[40]:
+
+
+clf.fit(count_train,y_train)
+pred = clf.predict(count_test)
+
+
+# In[41]:
+
+
+score = metrics.accuracy_score(y_test,pred)
+print(score)
+
+cm = metrics.confusion_matrix(y_test,pred,labels = [1,0])
+print(cm)
+
