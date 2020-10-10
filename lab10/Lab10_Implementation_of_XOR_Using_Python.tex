@@ -137,11 +137,15 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Lab10\_Implementation\_of\_XOR\_Using\_Python}
-    
-    
-    
-    
+    \title{%
+    Implementation of XOR Using Python \\
+    \large CSE 401: Artificial Intelligence }
+
+    \author{%
+      Utkarsh Gupta \\
+      \small A2305217557 \\
+      \small 7CSE 8Y}
+    \date{October 07th, 2020}    
     
 % Pygments definitions
 \makeatletter
@@ -358,12 +362,8 @@
     
     \maketitle
     
-    
-
-    
     \hypertarget{lab10-implementation-of-xor-using-python}{%
-\section{Lab10: Implementation of XOR using
-Python}\label{lab10-implementation-of-xor-using-python}}
+\section{Implementation of XOR using Python}\label{lab10-implementation-of-xor-using-python}}
 
     Implementing logic gates using neural networks help understand the
 mathematical computation by which a neural network processes its inputs
@@ -507,7 +507,7 @@ truth table.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{23}{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{epochs} \PY{o}{=} \PY{l+m+mi}{10000}
 \PY{n}{lr} \PY{o}{=} \PY{l+m+mf}{0.3}
@@ -519,7 +519,7 @@ truth table.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{24}{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Random weights and bias initialization}
 \PY{n}{hidden\PYZus{}weights} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{uniform}\PY{p}{(}\PY{n}{size}\PY{o}{=}\PY{p}{(}\PY{n}{inputLayerNeurons}\PY{p}{,}\PY{n}{hiddenLayerNeurons}\PY{p}{)}\PY{p}{)}
@@ -530,7 +530,7 @@ truth table.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{25}{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Display the hidden\PYZus{}weights, hidden\PYZus{}bias, output\PYZus{}weights, and output\PYZus{}bias}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Initial hidden weights: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -552,7 +552,7 @@ Initial output biases: [0.23861191]
     \end{Verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{26}{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Training algorithm}
 
@@ -583,7 +583,7 @@ Initial output biases: [0.23861191]
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{27}{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Display the hidden\PYZus{}weights, hidden\PYZus{}bias, output\PYZus{}weights and output\PYZus{}bias after training}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Final hidden weights: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -605,7 +605,7 @@ Final output bias: [-4.13619758]
     \end{Verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{28}{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Finally, display the predicted output}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Output from neural network after 10,000 epochs: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -619,16 +619,20 @@ Output from neural network after 10,000 epochs: [0.02576666] [0.97749278]
 [0.97755129] [0.02347608]
     \end{Verbatim}
 
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
+    ~\newpage
+
     \hypertarget{bonus-question}{%
-\subsection{BONUS QUESTION:}\label{bonus-question}}
+\section{BONUS QUESTION:}\label{bonus-question}}
 
     Implement any other logic gate using the above steps
 
     \hypertarget{and-gate}{%
-\paragraph{AND Gate}\label{and-gate}}
+\subsection{AND Gate}\label{and-gate}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{29}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Set the Input datasets}
 \PY{n}{inputs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
@@ -638,7 +642,7 @@ Output from neural network after 10,000 epochs: [0.02576666] [0.97749278]
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{30}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Training algorithm}
 \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{epochs}\PY{p}{)}\PY{p}{:}
@@ -668,7 +672,7 @@ Output from neural network after 10,000 epochs: [0.02576666] [0.97749278]
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{31}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{}Finally, display the predicted output for Bonus part (AND gate)}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Output from neural network after 10,000 epochs for AND gate: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -682,11 +686,15 @@ Output from neural network after 10,000 epochs for AND gate: [0.01980805]
 [0.00534951] [0.00536385] [0.98345295]
     \end{Verbatim}
 
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
+    ~\newpage
+
     \hypertarget{nand-gate}{%
-\paragraph{NAND Gate}\label{nand-gate}}
+\subsection{NAND Gate}\label{nand-gate}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{32}{\boxspacing}
+\prompt{In}{incolor}{14}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Set the Input datasets}
 \PY{n}{inputs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
@@ -696,7 +704,7 @@ Output from neural network after 10,000 epochs for AND gate: [0.01980805]
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{33}{\boxspacing}
+\prompt{In}{incolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{for} \PY{n}{\PYZus{}} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{epochs}\PY{p}{)}\PY{p}{:}
     \PY{c+c1}{\PYZsh{} Forward Propagation}
@@ -725,7 +733,7 @@ Output from neural network after 10,000 epochs for AND gate: [0.01980805]
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{34}{\boxspacing}
+\prompt{In}{incolor}{16}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Finally, display the predicted output}
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Output from neural network after 10,000 epochs: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -739,9 +747,7 @@ Output from neural network after 10,000 epochs: [0.99022717] [0.99999448]
 [0.99999443] [0.99999443]
     \end{Verbatim}
 
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
 
-    % Add a bibliography block to the postdoc
-    
-    
-    
 \end{document}
