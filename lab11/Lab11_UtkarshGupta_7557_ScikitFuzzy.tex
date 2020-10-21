@@ -137,10 +137,15 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Untitled}
-    
-    
-    
+    \title{%
+    Implementation of SciKit Fuzzy \\
+    \large CSE 401: Artificial Intelligence }
+
+    \author{%
+      Utkarsh Gupta \\
+      \small A2305217557 \\
+      \small 7CSE 8Y}
+    \date{October 21st, 2020}
     
     
 % Pygments definitions
@@ -362,8 +367,7 @@
 
     
     \hypertarget{fuzzy-c-means-clustering}{%
-\subsubsection{Fuzzy c-means
-clustering}\label{fuzzy-c-means-clustering}}
+\section{Fuzzy c-means clustering}\label{fuzzy-c-means-clustering}}
 
     Fuzzy logic principles can be used to cluster multidimensional data,
 assigning each point a membership in each cluster center from 0 to 100
@@ -377,7 +381,7 @@ according to the calculated clusters (also known as prediction) via
 \texttt{skfuzzy.cmeans\_predict}.
 
     \hypertarget{data-generation-and-setup}{%
-\subsubsection{Data generation and
+\subsection{Data generation and
 setup}\label{data-generation-and-setup}}
 
     In this example we will first undertake necessary imports, then define
@@ -433,9 +437,13 @@ Text(0.5, 1.0, 'Test data: 200 points x3 clusters.')
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{assets/output_4_1.png}
     \end{center}
     { \hspace*{\fill} \\}
-    
+
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
+    ~\newpage
+
     \hypertarget{clustering}{%
-\subsubsection{Clustering}\label{clustering}}
+\subsection{Clustering}\label{clustering}}
 
     Above is our test data. We see three distinct blobs. However, what would
 happen if we didn't know how many clusters we should expect? Perhaps if
@@ -480,9 +488,13 @@ clusters.
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{assets/output_7_0.png}
     \end{center}
     { \hspace*{\fill} \\}
+
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
+    ~\newpage
     
     \hypertarget{the-fuzzy-partition-coefficient-fpc}{%
-\subsubsection{The fuzzy partition coefficient
+\subsection{The fuzzy partition coefficient
 (FPC)}\label{the-fuzzy-partition-coefficient-fpc}}
 
     The FPC is defined on the range from 0 to 1, with 1 being best. It is a
@@ -522,9 +534,7 @@ Note that we started with two centers, not one; clustering a dataset
 with only one cluster center is the trivial solution and will by
 definition return FPC == 1.
 
+    ~\\
+    \noindent\rule{16.5cm}{0.4pt}
 
-    % Add a bibliography block to the postdoc
-    
-    
-    
 \end{document}
